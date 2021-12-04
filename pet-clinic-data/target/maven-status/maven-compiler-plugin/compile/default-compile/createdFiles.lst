@@ -1,5 +1,5 @@
 com\htu\petclinichtu\models\Owner.class
 com\htu\petclinichtu\models\Vet.class
+com\htu\petclinichtu\models\Pet.class
 com\htu\petclinichtu\models\PetType.class
 com\htu\petclinichtu\models\Person.class
-com\htu\petclinichtu\models\Pet.class
