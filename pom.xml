@@ -53,7 +53,7 @@
 	</modules>
 	
 	<scm>
-		<developerConnection>scm:git:git@github.com:hturamoar/pet-clinic-htu.git</developerConnection>
+		<developerConnection>https://github.com/hturamoar/pet-clinic-htu.git</developerConnection>
 	  <tag>com.htu.pet-clinic-htu-0.0.1</tag>
   </scm>
 </project>
