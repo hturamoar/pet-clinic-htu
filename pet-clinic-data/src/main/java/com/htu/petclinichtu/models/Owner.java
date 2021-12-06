@@ -18,6 +18,7 @@ public class Owner extends Person {
 	}
 
 	public String getCity() {
+		return city;
 	}
 
 	public void setCity(String city) {
