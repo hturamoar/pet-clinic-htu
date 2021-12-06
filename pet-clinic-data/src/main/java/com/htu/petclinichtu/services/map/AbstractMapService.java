@@ -12,15 +12,15 @@ import com.htu.petclinichtu.models.BaseEntity;
 public abstract class AbstractMapService<T extends BaseEntity, ID extends Number> {
 	protected Map<Long, T> map = new HashMap<>();
 
-	Set<T> findAll() {
+	public Set<T> findAll() {
 		return new HashSet<>(map.values());
 	}
 
-	T findById(ID id) {
+	public T findById(ID id) {
 		return map.get(id);
 	}
 
-	T save(T t) {
+	public T save(T t) {
 		if (t != null) {
 			if (t.getId() == null) {
 				t.setId(getNextId());
@@ -32,11 +32,11 @@ public abstract class AbstractMapService<T extends BaseEntity, ID extends Number
 		return t;
 	}
 
-	void deleteById(ID id) {
+	public void deleteById(ID id) {
 		map.remove(id);
 	}
 
-	void delete(T t) {
+	public void delete(T t) {
 		map.entrySet().removeIf(entry -> entry.getValue().equals(t));
 	}
 
