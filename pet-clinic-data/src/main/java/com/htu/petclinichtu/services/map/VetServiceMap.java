@@ -3,9 +3,9 @@ package com.htu.petclinichtu.services.map;
 import java.util.Set;
 
 import com.htu.petclinichtu.models.Vet;
-import com.htu.petclinichtu.services.CrudService;
+import com.htu.petclinichtu.services.VetService;
 
-public abstract class VetServiceMap extends AbstractMapService<Vet, Long> implements CrudService<Vet, Long> {
+public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 	@Override
 	public Set<Vet> findAll() {

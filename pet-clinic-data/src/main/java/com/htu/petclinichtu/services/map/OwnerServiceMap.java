@@ -3,9 +3,9 @@ package com.htu.petclinichtu.services.map;
 import java.util.Set;
 
 import com.htu.petclinichtu.models.Owner;
-import com.htu.petclinichtu.services.CrudService;
+import com.htu.petclinichtu.services.OwnerService;
 
-public abstract class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
 	public Set<Owner> findAll() {
@@ -30,5 +30,11 @@ public abstract class OwnerServiceMap extends AbstractMapService<Owner, Long> im
 	@Override
 	public void delete(Owner t) {
 		super.delete(t);
+	}
+	
+	@Override
+	public Owner findByLastName(String lastName) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
