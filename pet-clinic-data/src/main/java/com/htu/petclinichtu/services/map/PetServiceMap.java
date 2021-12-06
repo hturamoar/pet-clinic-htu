@@ -8,8 +8,12 @@ import com.htu.petclinichtu.models.Pet;
 import com.htu.petclinichtu.services.PetService;
 
 @Service
-public abstract class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
+	
+	public PetServiceMap() {
+		System.out.println("PetServiceMap Constructor");
+	}
 	@Override
 	public Set<Pet> findAll() {
 		return super.findAll();

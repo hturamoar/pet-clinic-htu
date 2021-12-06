@@ -1,9 +1,12 @@
 package com.htu.petclinichtu.bootstrap;
 
+import java.time.LocalDate;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import com.htu.petclinichtu.models.Owner;
+import com.htu.petclinichtu.models.Pet;
 import com.htu.petclinichtu.models.PetType;
 import com.htu.petclinichtu.models.Vet;
 import com.htu.petclinichtu.services.OwnerService;
@@ -40,11 +43,32 @@ public class DataLoader implements CommandLineRunner {
 		Owner owner1 = new Owner();
 		owner1.setFirstName("Michael");
 		owner1.setLastName("Williams");
+		owner1.setAddress("1234");
+		owner1.setCity("Blore");
+		owner1.setTelephone("+223444545");
+		
+		Pet mikesPet = new Pet();
+		mikesPet.setPetType(savedDogPetType);
+		mikesPet.setOwner(owner1);
+		mikesPet.setName("Rosco");
+		mikesPet.setBirthDate(LocalDate.now());
+		owner1.getPets().add(mikesPet);
+		
 		ownerService.save(owner1);
 
 		Owner owner2 = new Owner();
 		owner2.setFirstName("Fioana");
 		owner2.setLastName("Gendalle");
+		owner2.setAddress("1345");
+		owner2.setCity("Cnnai");
+		owner2.setTelephone("+22344567545");
+		
+		Pet GenPet = new Pet();
+		GenPet.setPetType(savedCatPetType);
+		GenPet.setOwner(owner2);
+		GenPet.setName("Kitty");
+		GenPet.setBirthDate(LocalDate.now());
+		owner2.getPets().add(GenPet);
 		ownerService.save(owner2);
 
 		System.out.println("Loading Owners------");

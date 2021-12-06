@@ -5,10 +5,14 @@ com\htu\petclinichtu\services\map\AbstractMapService.class
 com\htu\petclinichtu\services\OwnerService.class
 com\htu\petclinichtu\models\BaseEntity.class
 com\htu\petclinichtu\services\CrudService.class
+com\htu\petclinichtu\services\map\PetTypeServiceMap.class
 com\htu\petclinichtu\models\Vet.class
 com\htu\petclinichtu\services\map\OwnerServiceMap.class
 com\htu\petclinichtu\models\Person.class
+com\htu\petclinichtu\models\Visit.class
+com\htu\petclinichtu\services\PetTypeService.class
 com\htu\petclinichtu\services\VetService.class
 com\htu\petclinichtu\models\Pet.class
+com\htu\petclinichtu\models\Speciality.class
 com\htu\petclinichtu\services\PetService.class
 com\htu\petclinichtu\services\map\VetServiceMap.class
