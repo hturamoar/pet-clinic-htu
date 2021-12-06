@@ -2,9 +2,12 @@ package com.htu.petclinichtu.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import com.htu.petclinichtu.models.Vet;
 import com.htu.petclinichtu.services.VetService;
 
+@Service
 public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
 
 	@Override

@@ -2,9 +2,12 @@ package com.htu.petclinichtu.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import com.htu.petclinichtu.models.Owner;
 import com.htu.petclinichtu.services.OwnerService;
 
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	@Override
