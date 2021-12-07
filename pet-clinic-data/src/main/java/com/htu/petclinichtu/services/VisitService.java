@@ -1,9 +1,7 @@
 package com.htu.petclinichtu.services;
 
-import org.springframework.data.repository.CrudRepository;
-
 import com.htu.petclinichtu.models.Visit;
 
-public interface VisitService extends CrudRepository<Visit, Long> {
+public interface VisitService extends CrudService<Visit, Long> {
 
 }
