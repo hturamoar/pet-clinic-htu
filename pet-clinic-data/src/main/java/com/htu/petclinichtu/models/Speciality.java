@@ -1,6 +1,14 @@
 package com.htu.petclinichtu.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="specialties")
 public class Speciality extends BaseEntity{
+	
+	@Column(name="desccription")
 	private String description;
 
 	public String getDescription() {
