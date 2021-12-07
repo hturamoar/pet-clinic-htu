@@ -1,6 +1,8 @@
 package com.htu.petclinichtu.services.map;
 
 import java.util.Set;
+
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import com.htu.petclinichtu.models.Owner;
 import com.htu.petclinichtu.models.Pet;
@@ -9,6 +11,7 @@ import com.htu.petclinichtu.services.PetService;
 import com.htu.petclinichtu.services.PetTypeService;
 
 @Service
+@Profile({"map","default"})
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
 
 	private final PetTypeService petTypeService;

@@ -2,12 +2,14 @@ package com.htu.petclinichtu.services.map;
 
 import java.util.Set;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.htu.petclinichtu.models.PetType;
 import com.htu.petclinichtu.services.PetTypeService;
 
 @Service
+@Profile({"map","default"})
 public class PetTypeServiceMap extends AbstractMapService<PetType, Long> implements PetTypeService{
 
 	@Override
