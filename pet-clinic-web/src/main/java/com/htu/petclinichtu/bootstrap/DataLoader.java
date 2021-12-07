@@ -10,10 +10,12 @@ import com.htu.petclinichtu.models.Pet;
 import com.htu.petclinichtu.models.PetType;
 import com.htu.petclinichtu.models.Speciality;
 import com.htu.petclinichtu.models.Vet;
+import com.htu.petclinichtu.models.Visit;
 import com.htu.petclinichtu.services.OwnerService;
 import com.htu.petclinichtu.services.PetTypeService;
 import com.htu.petclinichtu.services.SpecialityService;
 import com.htu.petclinichtu.services.VetService;
+import com.htu.petclinichtu.services.VisitService;
 import com.htu.petclinichtu.services.map.OwnerServiceMap;
 import com.htu.petclinichtu.services.map.VetServiceMap;
 
@@ -24,14 +26,16 @@ public class DataLoader implements CommandLineRunner {
 	private final VetService vetService;
 	private final PetTypeService petTypeService;
 	private final SpecialityService specialityService;
+	private final VisitService visitService;
 
 	public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
-			SpecialityService specialityService) {
+			SpecialityService specialityService,VisitService visitService) {
 		super();
 		this.ownerService = ownerService;
 		this.vetService = vetService;
 		this.petTypeService = petTypeService;
 		this.specialityService = specialityService;
+		this.visitService = visitService;
 	}
 
 	@Override
@@ -84,6 +88,12 @@ public class DataLoader implements CommandLineRunner {
 		ownerService.save(owner2);
 
 		System.out.println("Loading Owners------");
+		
+		Visit catVisit = new Visit();
+		catVisit.setPet(GenPet);
+		catVisit.setDate(LocalDate.now());
+		catVisit.setDescription("Sneezing Cat");
+		visitService.save(catVisit);
 
 		Speciality radiology = new Speciality();
 		radiology.setDescription("radiology");

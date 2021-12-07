@@ -2,9 +2,12 @@ package com.htu.petclinichtu.services.map;
 
 import java.util.Set;
 
+import org.springframework.stereotype.Service;
+
 import com.htu.petclinichtu.models.Visit;
 import com.htu.petclinichtu.services.VisitService;
 
+@Service
 public class VisitServiceMap extends AbstractMapService<Visit, Long> implements VisitService{
 
 	@Override
