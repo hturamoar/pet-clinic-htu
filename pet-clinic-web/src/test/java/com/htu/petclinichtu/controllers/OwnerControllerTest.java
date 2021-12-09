@@ -1,6 +1,6 @@
 package com.htu.petclinichtu.controllers;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.hamcrest.CoreMatchers.isA;
 import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -11,6 +11,8 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import java.util.HashSet;
 import java.util.Set;
 
+import org.hamcrest.Matcher;
+import org.hamcrest.core.IsNot;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -18,7 +20,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.htu.petclinichtu.models.Owner;
@@ -87,6 +88,20 @@ class OwnerControllerTest {
 		.andExpect(view()
 				   .name("notImplemented"));
 		verifyNoInteractions(ownerService);
+	}
+	
+	@Test
+	void displayOwnersByIndex() throws Exception{
+		
+		when(ownerService.findById(org.mockito.ArgumentMatchers.anyLong())).thenReturn(owners.iterator().next());
+		mockMvc
+		.perform(get("/owners/123"))
+		.andExpect(status()
+				   .isOk())
+		.andExpect(view()
+				   .name("/owners/ownerDetails"))
+		.andExpect(model().attribute("owner", isA(Owner.class) ));
+		
 	}
 
 }
