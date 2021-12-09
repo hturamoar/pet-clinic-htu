@@ -2,4 +2,5 @@ com\htu\petclinichtu\bootstrap\DataLoader.class
 com\htu\petclinichtu\controllers\IndexController.class
 com\htu\petclinichtu\controllers\OwnerController.class
 com\htu\petclinichtu\PetClinicHtuApplication.class
+com\htu\petclinichtu\controllers\PetController.class
 com\htu\petclinichtu\controllers\VetController.class
