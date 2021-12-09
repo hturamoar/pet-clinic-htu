@@ -1,6 +1,7 @@
 package com.htu.petclinichtu.services.jpa;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -62,6 +63,13 @@ class OwnerServiceJPATest {
 		Owner owner = service.findById(1L);
 		assertNotNull(owner);
 	}
+	
+	@Test
+	void testFindByIdNotFound() {
+		when(ownerRepository.findById(org.mockito.ArgumentMatchers.anyLong())).thenReturn(Optional.empty());
+		Owner owner = service.findById(1L);
+		assertNull(owner);
+	}
 
 	@Test
 	void testSave() {
@@ -71,18 +79,19 @@ class OwnerServiceJPATest {
 		Owner savedOwner = service.save(ownerToSave);
 		assertNotNull(savedOwner);
 		assertEquals(1L, savedOwner.getId());
+		verify(ownerRepository).save(org.mockito.ArgumentMatchers.any());
 	}
 
 	@Test
 	void testDelete() {
 		service.delete(returnOwner);
-		assertEquals(0, service.findAll().size());
+		verify(ownerRepository,times(1)).delete(org.mockito.ArgumentMatchers.any());
 	}
 
 	@Test
 	void testDeleteById() {
 		service.deleteById(returnOwner.getId());
-		assertEquals(0, service.findAll().size());
+		verify(ownerRepository).deleteById(org.mockito.ArgumentMatchers.any());
 	}
 
 	@Test
